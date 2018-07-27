@@ -1,0 +1,11 @@
+<h1>This is the index page</h1>
+<ul>
+  <%= cart.each do |product| %>
+    <li><%= product %></li>
+  <% end %>
+</ul>
+
+<%= form_tag({controller: :products, action: "add", method: "post"}) do |f|%>
+  <input type="text" name="product">
+  <input type="submit" value="Add product" id="add to cart">
+<% end %>
